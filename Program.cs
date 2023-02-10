@@ -10,7 +10,7 @@ void RandArray(int[] collection, int lBound, int hBound)            //  мето
 Console.Clear();                                                    //  очистка консоли
 Console.WriteLine("Введите количество элементов в массиве: ");      // ввод числа
 int num = Convert.ToInt32(Console.ReadLine());
-if (num < 0)                                                        // если отрицательное значение
+if (num <= 0)                                                        // если отрицательное значение
     Console.WriteLine($"Число должно быть больше 0!");
 else
     {
@@ -18,8 +18,8 @@ else
     RandArray(array,100,1000);                                      //  наполнение массива
     Console.WriteLine(String.Join(" ",array));                      //  вывод массива
     int evenCount = 0;                                              //  накопитель подсчета
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length; i++)                          //  обходд элементов массива
         if (array[i] % 2 == 0)                                      //  элемент массива - чётный
-            evenCount++;
-    Console.WriteLine($"Количество чётных чисел - {evenCount}");
+            evenCount++;                                            //  подсчет результата
+    Console.WriteLine($"Количество чётных чисел - {evenCount}");    //  вывод результата
     }
